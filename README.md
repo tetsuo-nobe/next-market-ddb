@@ -1,4 +1,10 @@
 
+next-market-ddb
+(Serverless version: 00zt4qm0hl)
+
+Backend
+Amazon API Gateway + AWS Lambda + Amazon DynamoDB 
+  - next-market-ddb-sam リポジトリ
 
 Pythonでの　JWT 作成
 https://qiita.com/kuri_Django/items/fd4622fd725f02273752
