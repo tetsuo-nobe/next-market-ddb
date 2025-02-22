@@ -1,18 +1,12 @@
-2025/02/15 mod9 まで完了
+
 
 Pythonでの　JWT 作成
 https://qiita.com/kuri_Django/items/fd4622fd725f02273752
 
 https://monotein.com/books/nextjs-react-book/link-page
 
-Install Node.js latestS
+Install Node.js latest
 https://nodejs.org/en/download/package-manager
-
-MongoDB
-https://cloud.mongodb.com/v2/66efa1a932a8105c10294352#/overview
-
-Google アカウントでサインイン
-Cluster0 の Collection
 
 Git へ push 時に下記が出た場合は、`git config http.postBuffer 524288000` を実行
 
