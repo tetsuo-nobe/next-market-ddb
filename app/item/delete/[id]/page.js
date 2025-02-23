@@ -11,6 +11,7 @@ const DeleteItem = (context) => {
     const [image, setImage] = useState("/dummy.jpg")
     const [description, setDescription] = useState("")
     const [email, setEmail] = useState("")
+    const [loading, setLoading] = useState(false)
     const router = useRouter()
     const loginUserEmail = useAuth()
 
@@ -25,6 +26,7 @@ const DeleteItem = (context) => {
             setImage(singleItem.image)
             setDescription(singleItem.description)
             setEmail(singleItem.email)
+            setLoading(true)
         }
         getSingleItem(params.id)
 
@@ -53,25 +55,30 @@ const DeleteItem = (context) => {
             alert("アイテム削除失敗")
         }
     }
-    console.log(image)
-    if (loginUserEmail === email) {
-        return (
-            <div>
-                <h1 className="page-title">アイテム削除</h1>
-                <form  onSubmit={handleSubmit}>
-                    <h2>{title}</h2>
-                    <h3>¥{price}</h3>
-                    <div>
-                        <Image src={image} width={750} height={500} alt="item-image" priority/>
-                    </div>
-                    <p>{description}</p>
-                    <button>削除</button>
-                    
-                </form>
-            </div>
-        )
-    }else {
-        return <h1>権限がありません</h1>
+    if (loading) {
+        if (loginUserEmail === email) {
+            return (
+                <div>
+                    <title>アイテム削除ページ</title>
+                    <meta name="description" content="アイテム削除ページです"/>
+                    <h1 className="page-title">アイテム削除</h1>
+                    <form  onSubmit={handleSubmit}>
+                        <h2>{title}</h2>
+                        <h3>¥{price}</h3>
+                        <div>
+                            <Image src={image} width={750} height={500} alt="item-image" priority/>
+                        </div>
+                        <p>{description}</p>
+                        <button>削除</button>
+                        
+                    </form>
+                </div>
+            )
+        } else {
+            return <h1>権限がありません</h1>
+        }
+    } else {
+        return <h1>ローディング中...</h1>
     }
 }
 

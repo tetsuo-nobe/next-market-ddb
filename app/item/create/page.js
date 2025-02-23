@@ -42,6 +42,8 @@ const CreateItem = () => {
     if (loginUserEmail) {
         return (
             <div>
+                <title>アイテム作成ページ</title>
+                <meta name="description" content="アイテム作成ページです"/>
                 <h1 className="page-title">アイテム作成</h1>
                 <form  onSubmit={handleSubmit}>
                     <input value={title} onChange={(e)=> setTitle(e.target.value)} type="text" name="title" placeholder="アイテム名" required/>

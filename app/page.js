@@ -14,6 +14,8 @@ const ReadAllItems = async () => {
     const allItems = await getAllItems()
     return (
     <div className="grid-container-in">
+        <title>Next Market</title>
+        <meta name="description" content="Next Marketページです"/>            
         {allItems.map(item => 
             <Link href={`/item/readsingle/${item._id}`} key={item._id} >
                 <Image src={item.image} width={750} height={500} alt="item-image" priority/>
