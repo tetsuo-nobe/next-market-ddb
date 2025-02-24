@@ -1,10 +1,17 @@
 
-next-market-ddb
-(Serverless version: 00zt4qm0hl)
+# next-market-ddb
+* (Serverless version: 00zt4qm0hl)
 
-Backend
-Amazon API Gateway + AWS Lambda + Amazon DynamoDB 
-  - next-market-ddb-sam リポジトリ
+* Next.js v15 
+    - Amplify Hosting でデプロイする
+        - Amplify Hosting でデプロイ時に IAM ロールで S3 バケットへのアクセス権限を付与する
+        - このとき、サービスロールではなく **コンピューティングロール** にロールを設定する
+    - .env.development に 保存先の S3 バケット名、パス、AWS リージョン、公開用の CloudFront ディストリビューションのURLを指定
+
+* Backend
+    - Amazon API Gateway + AWS Lambda + Amazon DynamoDB 
+    - next-market-ddb-sam リポジトリ
+ 
 
 Pythonでの　JWT 作成
 https://qiita.com/kuri_Django/items/fd4622fd725f02273752
