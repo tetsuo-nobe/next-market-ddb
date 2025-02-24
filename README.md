@@ -4,7 +4,7 @@
 
 * Next.js v15 
     - Amplify Hosting でデプロイする
-        - Amplify Hosting でデプロイ時に IAM ロールで S3 バケットへのアクセス権限を付与する
+        - Amplify Hosting でデプロイ時に IAM ロールで S3 バケットへのアクセス権限(putObjectの許可)を付与する
         - このとき、サービスロールではなく **コンピューティングロール** にロールを設定する
     - .env.development に 保存先の S3 バケット名、パス、AWS リージョン、画像公開用の CloudFront ディストリビューションの URL を指定
     -  next.config.mjs にも画像公開用の CloudFront ディストリビューションのURLを指定
@@ -12,39 +12,55 @@
     - Amazon API Gateway + AWS Lambda + Amazon DynamoDB 
     - next-market-ddb-sam リポジトリ
  
+### 参考
+* Pythonでの　JWT 作成
+    - https://qiita.com/kuri_Django/items/fd4622fd725f02273752
 
-Pythonでの　JWT 作成
-https://qiita.com/kuri_Django/items/fd4622fd725f02273752
+* このアプリは、下記の「Next.js/React開発入門」のアプリに AWS のサーバーレスサービスを組み込んだもの
+    - https://monotein.com/books/nextjs-react-book/link-page
 
-https://monotein.com/books/nextjs-react-book/link-page
+* Install Node.js latest
+    - https://nodejs.org/en/download/package-manager
 
-Install Node.js latest
-https://nodejs.org/en/download/package-manager
-
-Git へ push 時に下記が出た場合は、`git config http.postBuffer 524288000` を実行
+* Git へ push 時に下記が出た場合は、`git config http.postBuffer 524288000` を実行
 
 ```
 error: RPC failed; HTTP 400 curl 22 The requested URL returned error: 400
 send-pack: unexpected disconnect while reading sideband packet
 ```
 
-
-npm install mongoose
-
+* JWT
+```
 npm install jose
+```
 
+* このアプリでは Amazon DynamoDB を使用しているので不要だが、もし MongoDB を使う場合
+```
+npm install mongoose
+```
+
+* その他
+```
 npm install highlight.js
 npm uninstall highlight.js
-
+```
 ---
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+```bash
+npx create-next-app next-market-ddb
+
+cd next-market-ddb
+
+npm install @aws-sdk/client-s3
+```
 
 ```bash
+PORT=8080 npm run dev
+# of
 npm run dev
 # or
 yarn dev
