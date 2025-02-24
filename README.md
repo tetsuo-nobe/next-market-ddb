@@ -6,8 +6,8 @@
     - Amplify Hosting でデプロイする
         - Amplify Hosting でデプロイ時に IAM ロールで S3 バケットへのアクセス権限を付与する
         - このとき、サービスロールではなく **コンピューティングロール** にロールを設定する
-    - .env.development に 保存先の S3 バケット名、パス、AWS リージョン、公開用の CloudFront ディストリビューションのURLを指定
-
+    - .env.development に 保存先の S3 バケット名、パス、AWS リージョン、画像公開用の CloudFront ディストリビューションの URL を指定
+    -  next.config.mjs にも画像公開用の CloudFront ディストリビューションのURLを指定
 * Backend
     - Amazon API Gateway + AWS Lambda + Amazon DynamoDB 
     - next-market-ddb-sam リポジトリ
