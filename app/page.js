@@ -2,9 +2,7 @@ import Image from "next/image"
 import Link  from "next/link"
 
 const getAllItems= async () => {
-    //const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readall`, {cache: "no-store"})
-    const response = await fetch("https://00zt4qm0hl.execute-api.ap-northeast-1.amazonaws.com/dev/item/readall", {cache: "no-store"})
-    
+    const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readall`, {cache: "no-store"})
     const jsonData = await response.json()
     const allItems =  jsonData.allItems
     return allItems
